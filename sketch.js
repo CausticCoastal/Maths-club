@@ -32,7 +32,7 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(48);
   textFont('SignifierTest');
-  fill(55, 92, 227, 255);
+  fill(255, 255, 225, 255);
   stroke(55, 92, 227, 230);
 
   describe('EN - Draw a grid of squares and within each square a geometric graphic is drawn...');
@@ -49,7 +49,7 @@ function draw() {
 
   textAlign(CENTER, CENTER);
   textFont('SignifierTest');
-  fill(55, 92, 227, 220);
+  fill(255, 255, 225, 220);
   stroke(255, 255, 255, 255);
   strokeWeight(2);
 
