@@ -43,11 +43,27 @@ function draw() {
   randomSeed(semente);
   grade((width - adjustedWidth) / 2, 0, grade_coluna_qtd, grade_linha_qtd, adjustedWidth);
 
-  // Draw your overlay text here — this draws on top of everything else
-  fill(55, 92, 227, 230); // white with alpha for slight transparency
-  textSize(164);
-  text("Maths Club", width / 2, height / 2);
-  stroke(0, 0, 0);
+  let baseText = "Maths Club";
+  let maxTextWidth = windowWidth * 0.9;
+
+  textAlign(CENTER, CENTER);
+  textFont('SignifierTest');
+  fill(55, 92, 227, 220);
+  stroke(255, 255, 255, 200);
+  strokeWeight(2);
+
+  // Start big
+  let textSizeValue = 300;
+  textSize(textSizeValue);
+
+  let tw = textWidth(baseText);
+
+  if (tw > maxTextWidth) {
+    textSizeValue = textSizeValue * (maxTextWidth / tw);
+    textSize(textSizeValue);
+  }
+
+  text(baseText, width / 2, height / 2);
 }
 function windowResized() {
   resizeCanvas(windowWidth, 350);
