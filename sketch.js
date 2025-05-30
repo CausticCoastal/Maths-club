@@ -48,7 +48,7 @@ function draw() {
   let maxTextWidth = width - padding * 2;
 
   textAlign(CENTER, CENTER);
-  textFont('SignifierTest');
+  textFont('Playfair Display');
   fill(255, 255, 225, 240);
   stroke(255, 255, 255, 255);
   strokeWeight(2);
