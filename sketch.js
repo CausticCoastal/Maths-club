@@ -49,7 +49,7 @@ function draw() {
 
   textAlign(CENTER, CENTER);
   textFont('SignifierTest');
-  fill(255, 255, 225, 220);
+  fill(255, 255, 225, 240);
   stroke(255, 255, 255, 255);
   strokeWeight(2);
 
