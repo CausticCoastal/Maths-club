@@ -44,7 +44,8 @@ function draw() {
   grade((width - adjustedWidth) / 2, 0, grade_coluna_qtd, grade_linha_qtd, adjustedWidth);
 
   let baseText = "Maths Club";
-  let maxTextWidth = windowWidth * 0.9;
+  let padding = 20;  // padding so text doesn't touch edges
+  let maxTextWidth = width - padding * 2;
 
   textAlign(CENTER, CENTER);
   textFont('SignifierTest');
@@ -52,7 +53,7 @@ function draw() {
   stroke(255, 255, 255, 200);
   strokeWeight(2);
 
-  // Start big
+  // Start with a large font size
   let textSizeValue = 300;
   textSize(textSizeValue);
 
@@ -60,11 +61,16 @@ function draw() {
 
   if (tw > maxTextWidth) {
     textSizeValue = textSizeValue * (maxTextWidth / tw);
-    textSize(textSizeValue);
   }
 
+  // Clamp minimum text size so it doesn't get too small or zero
+  textSizeValue = max(textSizeValue, 12);
+  textSize(textSizeValue);
+
+  // Draw text centered horizontally and vertically in canvas
   text(baseText, width / 2, height / 2);
 }
+
 function windowResized() {
   resizeCanvas(windowWidth, 350);
 
